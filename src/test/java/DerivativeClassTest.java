@@ -15,6 +15,6 @@ class DerivativeClassTest {
         Polinom expected = new Polinom(Arrays.asList(new Monom(2,6), new Monom(1, 6)));
         DerivativeClass der = new DerivativeClass();
         Polinom actual = der.forAll1(p1);
-        assertEquals(expected, actual);
+        assertEquals(expected.toString(), actual.toString());
     }
 }

@@ -16,6 +16,6 @@ class SubClassTest {
         Polinom expected = new Polinom(Arrays.asList(new Monom(1,1), new Monom(2, -2), new Monom(3,-2)));
        SubClass subb = new SubClass();
         Polinom actual = subb.forAll(p1,p2);
-        assertEquals(expected, actual);
+        assertEquals(expected.toString(), actual.toString());
     }
 }

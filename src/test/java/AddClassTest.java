@@ -17,6 +17,6 @@ class AddClassTest {
         Polinom expected = new Polinom(Arrays.asList(new Monom(3,6), new Monom(2, 8), new Monom(1,1)));
       AddClass add = new AddClass();
       Polinom actual = add.forAll(p1, p2);
-      assertEquals(expected, actual);
+      assertEquals(expected.toString(), actual.toString());
     }
 }

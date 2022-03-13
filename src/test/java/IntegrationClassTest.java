@@ -15,6 +15,6 @@ class IntegrationClassTest {
         Polinom expected = new Polinom(Arrays.asList(new Monom(4,1), new Monom(3, 1)));
         IntegrationClass in = new IntegrationClass();
         Polinom actual = in.forAll1(p1);
-        assertEquals(expected, actual);
+        assertEquals(expected.toString(), actual.toString());
     }
 }

@@ -14,7 +14,7 @@ public class SubClass implements PolynomialOp {
     public Polinom forAll(Polinom p1, Polinom p2) {
 
         HashMap<Integer, Float> hash_map = new HashMap<>();
-        putIntoHash(hash_map, p1);
+        putIntoHashPol(hash_map, p1);
         putIntoHash(hash_map, p2);
         List<Monom> mList = new ArrayList<>();
 
@@ -24,14 +24,20 @@ public class SubClass implements PolynomialOp {
         }
         return new Polinom(mList);
     }
+    private void putIntoHashPol(HashMap<Integer, Float> hash_map, Polinom p){
+        for(Monom j : p.getListOfMonom()){
+            hash_map.put(j.getPutere(), j.getCoef());
+        }
+    }
     private void putIntoHash(HashMap<Integer, Float> hash_map, Polinom p){
+
         for(Monom i : p.getListOfMonom()){
             if(hash_map.containsKey(i.getPutere())){
-                hash_map.put(i.getPutere(), (hash_map.get(i.getPutere())-i.getCoef()));
+                hash_map.put(i.getPutere(), hash_map.get(i.getPutere())-i.getCoef());
             }
             else
             {
-                hash_map.put(i.getPutere(), i.getCoef());
+                hash_map.put(i.getPutere(),-i.getCoef());
             }
         }
     }

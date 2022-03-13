@@ -16,6 +16,6 @@ class MultiplicClassTest {
         Polinom expected = new Polinom(Arrays.asList(new Monom(5,3), new Monom(4, 1), new Monom(3, 3), new Monom(2, 1)));
         MultiplicClass mul = new MultiplicClass();
         Polinom actual = mul.forAll(p1,p2);
-        assertEquals(expected, actual);
+        assertEquals(expected.toString(), actual.toString());
     }
 }
